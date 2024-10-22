@@ -1,0 +1,52 @@
+
+/*main setteing*/
+*{margin: 4% 0 0 4%;}
+
+/*main div style*/
+#calculator {
+    background-color: #100c08;
+    width: 300px;
+    padding: 16px;
+    position: relative;
+    top: 5px;
+    font-family: monospace;
+}
+
+#display{
+    background-color: #100c08;
+    color: white;
+    height: 10%;
+    width: 90%;
+    margin-top: 5%;
+    font-size: 2.5rem;
+    width: 90%;
+    white-space: nowrap;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+button{
+    border-radius: 55%;
+    height: 3rem;
+    width: 3rem;
+    background-color: #666;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.8rem;
+
+
+
+}
+#equals{
+    width: 90%;
+    border-radius: 1.5rem;
+    background-color: #ccc;
+    color: #222;
+
+
+}
+
+.operator{
+    background-color: darkorange;
+
+}
