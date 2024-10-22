@@ -1,0 +1,22 @@
+create database ZakDb;
+
+use ZakDb;
+
+create table employees (
+	employee_id int,
+	firts_name varchar(45),
+	last_name varchar(45),
+	date_of_hire date,
+	pay_per_hour decimal(2,2),
+	skills varchar(45),
+	descr text
+ );
+ 
+ 
+ INSERT INTO employees 
+VALUES (1, "spongpop","sqerrpants", "2024-10-13",1, "null" , "null");
+
+select * from employees where employee_id = 1;
+
+drop * from employees
+				
