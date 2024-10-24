@@ -1,3 +1,10 @@
+# .----.       .-.                _        
+# `--. :       : :.-.            :_;         
+#   ,',' .--.  : `'.' .--.  .--. .-. .--.                #zakari1234a@gmail.com
+# .'.'_ ' .; ; : . `.' .; ; : ..': :' .; ;             
+# :____;`.__,_;:_;:_;`.__,_;:_;  :_;`.__,_;
+                                         
+
 class BankAccount:
     def __init__(self, int_rate=0.01, balance=0):
         self.int_rate = int_rate
