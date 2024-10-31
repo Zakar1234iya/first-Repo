@@ -1,0 +1,58 @@
+.main{
+    border:2px;
+    border-color: black;
+    border-style: solid;
+    height: 30%;
+    width: 30%;
+    margin: 10% 0px 0px 30% ;
+}
+
+.top{
+display: flex;
+align-items: center;
+}
+
+.head{
+    margin: 0px 0px 0px 5%;
+ }
+
+
+.like_side{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40% ;
+    align-items: center;
+}
+
+.btn{
+    margin-left: 10px;
+    width: 60px;
+    height: 30px;
+    background-color: orange;
+    color: white;
+    box-shadow: 3px 3px 2px black;
+}
+.btn:hover {
+   background-color: orange}
+
+
+.btn:active {
+   background-color: orange;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+
+#LikesLabel{
+    margin-right: 20px;
+}
+
+
+.p_div{
+    margin-left: 5%;
+}
+
+
+
+

@@ -1,0 +1,159 @@
+/*main desgin*/
+*{
+    font-family: Roboto, sans-serif;
+    margin: 0%;
+}
+.page_body{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/*title bar  */
+    .navtitile{
+        background-color: lightskyblue;
+        display: flex;
+        width: 100%;
+        height: 100Px;
+        align-items: center;
+    }
+        .flex1{
+            flex:3;
+        }
+        .title{
+            
+            color: white;
+            font-size: 56px;
+            padding-left: 15%;
+        }
+        .I_font{
+            font-family: italic;
+        }
+
+        .citys{
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 10%;
+        flex:2;
+        }
+        .city{
+            width: auto;
+            height: 60px;
+            font-size: 32px;
+            border:none;
+            background-color: lightskyblue;
+            color: white;
+        }
+        
+/*secound title Bar */
+   .sectitle{
+    margin: 3% 0px 0px 0px ;
+    display: flex;
+    align-items: center;
+    border-bottom: 5px solid;
+    border-color: black;  
+    padding-bottom: 10px;
+     }
+        .cityname{
+        height: 40px;
+        width: 200px;
+        margin-left: 6%;
+        font-size: 32px;
+        }
+
+        .tempdiv{
+            display: flex;
+            align-items: center;
+            margin-left: 60%;
+            gap: 5px;
+            font-size:large;
+            height: 100%;
+        }
+        #temp{
+            height: 30px;
+        }
+
+/*weather info area  */
+
+    .info_area{
+            margin-top: 5%;
+            display: flex;
+            justify-content:space-evenly;
+            
+     }
+     /*ALL day's div setting*/
+     .day_1 ,.day_2,.day_3,.day_4{
+        border: 2px solid white;
+        width: 20%;
+        height: 400px;
+        text-align: center;
+        padding-top: 1%;
+        background-color: rgb(213, 210, 210);
+    
+    }
+  
+    img{
+        background-color: white;
+        margin-top: 10%;
+        width: 200px;
+        height: 200px;
+
+    }
+    /*weather descrption p*/
+    .weatherdesc{
+        text-align: center;
+        font-size: 25px;
+        height: 30px;
+        margin: 0px 20% 0px 20%;
+        font-size: 13px;
+    }
+
+    /*where to print output temp*/
+   .output_temp{
+    margin: 15% 15% 0 15% ;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 32px;
+   }
+
+/* cookies div */
+   .cookie_div{
+    margin: 5% 3% 0% 3%;
+    display: flex;
+    align-items: center;
+    background-color: silver;
+    border: 4px solid black;
+    height: 120px;
+    position: fixed;
+    bottom: 10px;
+    width: 74%;
+   }
+   #cookieimg{
+    width: 100px;
+    height: 100px;
+    margin: 0 20px 0 20px ;
+   }
+   .cookie_title{
+    font-size: 28px;
+   }
+   .cookie_p{
+    width: 70%;
+   }
+   .btn{
+    margin-right: 2%;
+   }
+
+   .button2{
+    width: 100px ;
+    height: 40px;
+    background-color: lightskyblue;  
+    box-shadow: 2px 2px black;  
+    }
+   
+
+
+
+
+    

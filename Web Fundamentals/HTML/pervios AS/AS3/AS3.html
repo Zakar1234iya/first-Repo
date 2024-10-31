@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>Registration Form</title>
+</head>
+
+<body>
+    <div>
+
+        <h1>Registration Form</h1>
+        <form action="">
+            <div>
+                <label for="name">First Name:*</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <br>
+            <div>
+                <label for="lastName">Last Name:*</label>
+                <input type="text" name="lastName" id="lastName">
+            </div>
+            <br>
+            <div>
+                <label for="Email Address">Email Address:*</label>
+                <input type="text" name="Email Address">
+            </div>
+            <br>
+            <div>
+                <label for="password">Password:*</label>
+                <input type="password">
+            </div>
+            <br>
+            <hr>
+            <div>
+                <label for="Confirm_Password">Confirm Password:*</label>
+                <input type="password" id="Confirm_Password" >
+            </div>
+            <br>
+            <div>
+                <label for="Birthday">Birthday:</label>
+                <input type="date" name="Birthday" id="Birthday">
+            </div>
+            <br>
+            <div>
+                <label for="Gender">Gender Identity:</label>
+                <input type="radio" name="Gender" value="male" id="male">
+                <label for="male">male</label>
+                <input type="radio" name="Gender" value="female" id="female">
+                <label for="female">female</label>
+                <input type="radio" name="Gender" value="Non-binary" id="Non-binary">
+                <label for="Non-binary">Non-bianry</label>
+                <input type="radio" name="Gender" value="other" id="other">
+                <label for="other">I prefer not to answer</label>
+            </div>
+            <br>
+            <div>
+                <label for="description">A short description about myself:</label>
+                <br>
+                <textarea name="description" id="description" cols="30" rows="2"></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="language">Favorite Language:</label>
+                <select name="language" id="language">
+                    <label for="language">Favorite Language:</label>
+                    <option value="">--Please choose an option--</option>
+                    <option value="java-script">java-script</option>
+                    <option value="python">python</option>
+                    <option value="css">CSS</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <input type="checkbox" name="email" id="email">
+                <label for="checkbox"> Yes, I would like to receive pericodic email updates</label>
+            </div>
+            <br>
+            <div>
+                <input type="button" value="Create Accont">
+            </div>
+        </form>
+        <p>* Indicates a required field </p>
+    </div>
+
+</body>
+
+</html>

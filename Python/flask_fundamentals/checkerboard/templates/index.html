@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkboard</title>
+    
+</head>
+<style>
+    
+.row{
+    display:grid;
+    grid-template-columns: repeat({{y}}, 10vh);
+    grid-template-rows: repeat({{x}}, 10vh);
+}
+
+.boxX {
+    background-color: {{ color1 }};
+}
+
+.boxY {
+    background-color: {{ color2 }};
+}
+
+</style>
+<body>
+    <div class="row">
+        {% for row in range(x) %}
+        {% for col in range(y) %}
+            {% if (row + col) % 2== 0 %}
+                <div class="boxX"></div>
+            {% else %}
+                <div class="boxY"></div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    </div>
+</body>
+</html>
