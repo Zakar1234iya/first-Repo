@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin:5%  ;  
+
+}
+.title{
+    border: 2px  double black ;
+    width: 30%;
+    height: 70px ;
+    margin: 0 auto;
+    text-align: center;
+}
+h1{
+    padding-top: 15px;
+}
+.datetime-box{
+    border: 2px double black ;
+    margin: 2% auto;
+    width: 50%;
+    text-align: center;
+    height: 70px;
+    font-size: 50px;
+
+}

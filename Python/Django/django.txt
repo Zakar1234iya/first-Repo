@@ -1,0 +1,8 @@
+ django-admin startproject  name  @start project 
+ python manage.py runserver     @runserver
+python manage.py startapp name  @startapp
+
+add app name to setting.py 
+add app url at url.py 
+create app url
+python manage.py runserver.py 
