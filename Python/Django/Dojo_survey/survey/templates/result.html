@@ -9,13 +9,13 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Survey Results</h1>
-        <p><strong>Name:</strong> {{ name }}</p>
-        <p><strong>Email:</strong> {{ email }}</p>
-        <p><strong>Gender:</strong> {{ Gender }}</p>
-        <p><strong>Dojo location:</strong> {{ dojo_location }}</p>
-        <p><strong>Favorite Programming Language:</strong> {{ favorite_language }}</p>
-        <p><strong>lovezak:</strong> {{ lovezak }}</p>
-        <p><strong>comment:</strong> {{ comment }}</p>
+        <p><strong>Name:</strong> {{ request.session.name }}</p>
+        <p><strong>Email:</strong> {{ request.session.email }}</p>
+        <p><strong>Gender:</strong> {{ request.session.Gender }}</p>
+        <p><strong>Dojo location:</strong> {{ request.session.dojo_location }}</p>
+        <p><strong>Favorite Programming Language:</strong> {{ request.session.favorite_language }}</p>
+        <p><strong>lovezak:</strong> {{ request.session.lovezak }}</p>
+        <p><strong>comment:</strong> {{ request.session.comment }}</p>
     </div>
 </body>
 </html>
