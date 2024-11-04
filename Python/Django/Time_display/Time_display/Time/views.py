@@ -8,8 +8,7 @@ def index(request):
 def time_display(request):
     now = datetime.now()
     context = {
-        'now': now,
-        'date_time': now.strftime("%b %d %Y %I:%M:%S %p"),
+        'date_time': now.strftime("%b %d %y %I:%M:%S %p"),
     }
     return render(request , "time_display.html" , context)
 

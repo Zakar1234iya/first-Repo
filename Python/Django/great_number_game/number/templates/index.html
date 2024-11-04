@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Great Number Game</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">  
+</head>
+<body>
+    <div class="container">
+        {% if 'name' not in request.session %}
+            <form method="POST" action="/">
+                  {% csrf_token %}
+                <label for="name">Enter your name to start:</label>
+                <input type="text" name="name" required placeholder="name">
+                <button type="submit">Start Game</button>
+            </form>
+        {% else %}
+            <h1>Welcome, {{ request.session.name }}!</h1>
+            <h2>Guess the Number!</h2>
+            <p>Number of attempts: {{ request.session.attempts }}</p>
+            <p>lil bit high number /Lil bit low +-20</p>
+            <p>bit big number / Bit low number +-10</p>
+            <form action="/guess" method="post">
+                  {% csrf_token %}
+                <label for="guess">Your guess:</label>
+                <input autofocus type="number" placeholder="number" name="guess" required {% if request.session.attempts >= 10 %}disabled{% endif %}>
+                {% if request.session.attempts  < 10 %}
+                    <button type="submit">Submit</button>
+                {% endif %}
+            </form>
+            {% if request.session.feedback %}
+                <div class="feedback" style="background-color: {{ request.session.background }}">
+                    <p>{{ request.session.feedback }}</p>
+                </div>
+                {% if request.session.feedback == 'Correct!' %}
+                    <form action="/save_score" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Save Score</button>
+                    </form>
+                {% endif %}
+            {% endif %}
+            <a href="/restart">Restart Game</a>
+        {% endif %}
+        <a href="/highscore">highscore</a>
+    </div>
+</body>
+</html>
