@@ -45,7 +45,8 @@
         {% endfor %}
       </tbody>
     </table>
-    <form action="/submit" method="post">
+    <form action="/submit"  method="post">
+      <h1>Add user</h1>
       {% csrf_token %}
       <div class="form-group">
         <label for="fname">First name*:</label>
