@@ -11,3 +11,5 @@ python manage.py runserver.py
 
 py manage.py makemigrations 
 py manage.py migrate
+
+py manage.py shell
