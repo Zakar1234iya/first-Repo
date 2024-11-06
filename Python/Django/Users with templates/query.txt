@@ -1,0 +1,36 @@
+>python manage.py shell
+
+>>> from app1.models import *
+
+>>> User.objects.create(first_name="Luna Lovegood", last_name="Ravenclaw", email_address="None", age="4")
+>>> User.objects.create(first_name="been", last_name="white", email_address="been@gmail.com", age="10")
+>>> User.objects.create(first_name="Loai", last_name="Zaidan", email_address="loai@gmail.com", age="20")
+
+>>> User.objects.all()
+<QuerySet [<User: User object (1)>, <User: User object (2)>, <User: User object (3)>]>
+
+>>> User.objects.last()
+<User: User object (3)>
+
+>>> User.objects.first()
+<User: User object (1)>
+
+>>> User.objects.get(id=1)
+<User: User object (1)>
+>>> c =User.objects.get(id=3)
+>>> c.last_name = "pancakes"
+>>> c.save()
+>>> c.last_name
+'pancakes'
+
+>>> d = User.objects.get(id=2)
+>>> d.delete()
+(1, {'app1.User': 1})
+
+>>> User.objects.all().order_by('first_name')
+<QuerySet [<User: User object (3)>, <User: User object (1)>]>
+
+
+>>> User.objects.all().order_by('-first_name')
+<QuerySet [<User: User object (1)>, <User: User object (3)>]>
+>>>

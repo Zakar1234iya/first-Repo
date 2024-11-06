@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Users</title>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">User Table</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>UID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>age</th>
+          <th>date_of_create</th>
+          <th>updated_at</th>
+
+
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{ user.id }}</td>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.email_address }}</td>
+          <td>{{ user.age }}</td>
+          <td>{{ user.created_at }}</td>
+          <td>{{ user.updated_at }}</td>
+
+
+
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <form action="/submit" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="fname">First name*:</label>
+        <input type="text" class="form-control" id="fname" name="fname" required />
+      </div>
+      <div class="form-group">
+        <label for="lname">Last name*:</label>
+        <input type="text" class="form-control" id="lname" name="lname" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email*:</label>
+        <input type="email" class="form-control" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="age">Age*:</label>
+        <input type="number" class="form-control" id="age" name="age" required />
+      </div>
+      <button type="submit" class="btn-primary">Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>
