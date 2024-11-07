@@ -1,0 +1,95 @@
+from app1.models import *
+
+Authors.objects.create(first_name="", last_name="",)
+Book.objects.create(title="")
+
+
+>>> Book.objects.create(title="C Sharp")
+<Book: Book object (1)>
+>>> Book.objects.create(title="Java")
+<Book: Book object (2)>
+>>> Book.objects.create(title="Python")
+<Book: Book object (3)>
+>>> Book.objects.create(title="PHP")
+<Book: Book object (4)>
+>>> Book.objects.create(title="Ruby")
+<Book: Book object (5)>
+
+>>> Author.objects.create(first_name="Jane", last_name="Austen")
+<Author: Author object (1)>
+>>> Author.objects.create(first_name="Emily", last_name="Dickinson")
+<Author: Author object (2)>
+>>> Author.objects.create(first_name="Fyodor", last_name="Dostovsky")
+<Author: Author object (3)>
+>>> Author.objects.create(first_name="William", last_name="Shakespeare")
+<Author: Author object (4)>
+>>> Author.objects.create(first_name="Lau", last_name="Tzu")
+<Author: Author object (5)>
+
+
+>>> from app1.models import *
+>>> c = Book.objects.get(id=1)
+>>> c.title = "C#"
+>>> c.save
+<bound method Model.save of <Book: Book object (1)>>
+>>> print(c.title)
+C#
+
+
+
+>>> d = Author.objects.get(id=4)
+>>> d.first_name="Bill"
+>>> d.save
+<bound method Model.save of <Author: Author object (4)>>
+>>> print(d)
+Author object (4)
+>>> print(d.first_name)
+Bill
+
+
+
+
+Query: Assign the first author to the first 2 books
+books = Book.objects.filter(id__in=[1, 2])
+first_author = Author.objects.first()
+first_author.books.add(*books)
+
+
+Query: Assign the second author to the first 3 books
+>>> books = Book.objects.filter(id__in=[1,2,3])
+>>> secound_author = Author.objects.get(id =2 )
+>>> secound_author.books.add(*books)
+
+>>> books = Book.objects.all()
+>>> third_author = Author.objects.get(id=3)
+>>> third_author.books.add(*books)
+
+
+>>> books = Book.objects.filter(id__in=[1,2,3])
+>>> fourth_author = Author.objects.get(id=4)
+>>> fourth_author.books.add(*books)
+
+>>> authers = Author.objects.filter(books__id=3)
+>>> print(authers)
+<QuerySet [<Author: Author object (2)>, <Author: Author object (3)>, <Author: Author object (4)>]>
+
+>>> authors =third_book.authers.all()
+>>> first_auther =authors.first()
+>>> third_book.authers.remove(first_auther)
+
+
+
+Query: Add the 5th author as one of the authors of the 2nd book
+second_book = Book.objects.filter(id=2)
+fifth_author = Author.objects.get(id=5)
+>>> fifth_author.books.add(*second_book)
+
+
+Query: Find all the books that the 3rd author is part of
+>>> third_author = Author.objects.get(id=3)
+>>> books = third_author.books.all()
+
+Query: Find all the authors that contributed to the 5th book
+fifth_book = Book.objects.get(id=5)
+authers = fifth_book.authers.all()
+
