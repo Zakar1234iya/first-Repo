@@ -1,0 +1,15 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+main{
+    margin:2% 10% 2% 10%;
+    display: flex;
+    width: 80%;
+    gap: 20%;
+    justify-content: center;
+}
+footer{
+    width: 60%;
+    margin-left: 20%;
+}

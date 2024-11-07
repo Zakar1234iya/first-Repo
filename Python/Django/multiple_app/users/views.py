@@ -1,6 +1,5 @@
 from django.shortcuts import HttpResponse, redirect 
 from django.http import JsonResponse
-from django.urls import reverse
 from blogs.views import  index
 
 def root(request):

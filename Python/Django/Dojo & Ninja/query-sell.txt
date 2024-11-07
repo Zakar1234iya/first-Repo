@@ -1,0 +1,44 @@
+>>> from app.models import *
+
+
+>>> Zak = Dojo.objects.create(name="Zak", city="Wb", state="ST")
+>>> Mo= Dojo.objects.create(name="Mo", city="RM", state="ST")
+>>> ALI= Dojo.objects.create(name="ALI", city="J", state="2")
+
+
+>>> Zak.delete()
+(1, {'app.Dojo': 1})
+>>> Mo.delete()
+(1, {'app.Dojo': 1})
+>>> ALI.delete()
+(1, {'app.Dojo': 1})
+
+
+>>> Zak = Dojo.objects.create(name="Zak", city="Wb", state="ST")
+>>> Mo= Dojo.objects.create(name="Mo", city="RM", state="ST")
+>>> ALI= Dojo.objects.create(name="ALI", city="J", state="2")
+
+
+>>> ninja1 = Ninja.objects.create(first_name="Ninja", last_name="1", dojo=Zak)
+>>> ninja2 = Ninja.objects.create(first_name="Ninja", last_name="2", dojo=Zak)
+>>> ninja3 = Ninja.objects.create(first_name="Ninja", last_name="3", dojo=Zak)
+>>> ninja1 = Ninja.objects.create(first_name="Ninja1", last_name="1", dojo=Zak)
+>>> ninja2 = Ninja.objects.create(first_name="Ninja", last_name="2", dojo=Zak)
+>>> ninja3 = Ninja.objects.create(first_name="Ninja", last_name="3", dojo=Zak)
+>>> ninja1 = Ninja.objects.create(first_name="Ninja", last_name="1", dojo=Mo)
+>>> ninja2 = Ninja.objects.create(first_name="Ninja", last_name="2", dojo=Mo)
+>>> ninja3 = Ninja.objects.create(first_name="Ninja", last_name="3", dojo=Mo)
+>>> ninja1 = Ninja.objects.create(first_name="Ninja", last_name="1", dojo=ALI)
+>>> ninja2 = Ninja.objects.create(first_name="Ninja", last_name="2", dojo=ALI)
+>>> ninja3 = Ninja.objects.create(first_name="Ninja", last_name="3", dojo=ALI)
+
+
+>>> print(Zak.dojos.all())
+<QuerySet [<Ninja: Ninja object (1)>, <Ninja: Ninja object (2)>, <Ninja: Ninja object (3)>]>
+
+
+>>> print(Ninja.objects.last())
+Ninja object (9)
+
+
+Dojo.objects.create(name="d", city="MM", state="5" , desc = "new ninja")
