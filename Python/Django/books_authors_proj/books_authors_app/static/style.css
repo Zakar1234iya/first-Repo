@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0%;
+}
+
+
+
+main{
+    margin: 10% 0% 0% 0% ;
+    display:flex ;
+    justify-content:space-around
+ 
+}
+
+.form_box{
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    vertical-align: middle;
+}
+
