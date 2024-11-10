@@ -19,5 +19,3 @@ class Player(models.Model):
 
 
 
-def get_all_baseball():
-    
