@@ -29,15 +29,15 @@
         </tr>
       </thead>
       <tbody>
-        {% for user in users %}
+        {% for i in users %}
         <tr>
-          <td>{{ user.id }}</td>
-          <td>{{ user.first_name }}</td>
-          <td>{{ user.last_name }}</td>
-          <td>{{ user.email_address }}</td>
-          <td>{{ user.age }}</td>
-          <td>{{ user.created_at }}</td>
-          <td>{{ user.updated_at }}</td>
+          <td>{{ i.id }}</td>
+          <td>{{ i.first_name }}</td>
+          <td>{{ i.last_name }}</td>
+          <td>{{ i.email_address }}</td>
+          <td>{{ i.age }}</td>
+          <td>{{ i.created_at }}</td>
+          <td>{{ i.updated_at }}</td>
 
 
 
@@ -46,7 +46,7 @@
       </tbody>
     </table>
     <form action="/submit"  method="post">
-      <h1 class="text-center>Add user</h1>
+      <h1 class="text-center" >Add user </h1>
       {% csrf_token %}
       <div class="form-group">
         <label for="fname">First name*:</label>

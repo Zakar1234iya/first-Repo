@@ -16,6 +16,7 @@ def create_user(data):
     
 def get_all_users():
     users = User.objects.all()
+    print(users)
     return users
 
     
