@@ -8,3 +8,30 @@ class Bear(Animal):
     def display_info(self):
         super().display_info()
         print(f"Color: {self.color}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

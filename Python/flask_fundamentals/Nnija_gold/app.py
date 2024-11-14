@@ -56,7 +56,7 @@ def save_score():
 
 @app.route('/highscore')
 def highscore():
-    return render_template('highscore.html', highscore=session.get('highscore', []))
+    return render_template('highscore.html', highscore = session.get('highscore', []))
 
 @app.route('/reset', methods=['POST'])
 def reset():
