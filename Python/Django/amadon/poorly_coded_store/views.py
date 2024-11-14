@@ -12,13 +12,13 @@ def buy(request):
         product_id = request.POST['product_id']
         quantity = int(request.POST['quantity'])
         product = Product.objects.get(id=product_id)
-        total_charge = float(product.price) * quantity  # Convert Decimal to float
+        total_charge = float(product.price) * quantity  
 
-        # Create an order
+       
         Order.objects.create(product=product, quantity_ordered=quantity, total_price=total_charge)
 
-        # Store order details in session
-        request.session['total_charge'] = float(total_charge)  # Convert Decimal to float
+       
+        request.session['total_charge'] = float(total_charge)  
         request.session['total_quantity'] = quantity
 
         return redirect('/checkout')
@@ -31,6 +31,6 @@ def checkout(request):
         'total_charge': total_charge,
         'total_quantity': total_quantity,
         'total_orders': Order.objects.count(),
-        'total_amount': sum(float(order.total_price) for order in Order.objects.all())  # Convert Decimal to float
+        'total_amount': sum(float(order.total_price) for order in Order.objects.all())  
     }
     return render(request, "store/checkout.html", context)
