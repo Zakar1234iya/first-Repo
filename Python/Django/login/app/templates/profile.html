@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+</head>
+<body class="bg-white text-black">
+    <div class="p-4">
+        <h1 class="text-2xl font-bold">Success! Welcome, {{ request.session.fname }}</h1>
+        <p class="text-green-500">Successfully LOGIN</p>
+        <div class="absolute top-16 right-16">
+            <a href="/logout" class="text-blue-500">Log Out</a>  
+        </div>
+    </div>
+</body>
+</html>
