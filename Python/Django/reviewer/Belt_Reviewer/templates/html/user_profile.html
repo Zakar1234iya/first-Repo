@@ -1,0 +1,62 @@
+{% extends 'html/base.html' %}
+
+{% block content %}
+
+<nav class="row align-items-center justify-content-between border-bottom p-1 mb-5">
+    <div class="col-sm-4 align-self-center">
+    </div>
+    <div class="col-sm-4 align-self-center">
+        <a href="{% url 'book_reviews' %}">Home</a> | <a href="{% url 'add_book_review' %}">Add Book & Review</a> | <a href="{% url 'logout' %}">Logout</a>
+    </div>
+</nav>
+<div class="row">
+    <div class="col-md-12">
+        <h2>User Alias: {{ user.alias }}</h2>
+        <div class="row">
+            <div class="col-sm-1">
+                <p>Name:</p>
+            </div>
+            <div class="col-sm-5">
+                <p>{{ user.name }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+                <p>Email:</p>
+            </div>
+            <div class="col-sm-5">
+                <p>{{ user.email }}</p>
+            </div>
+        </div>
+        {% if reviews %}
+        <div class="row">
+            <div class="col-sm-1">
+                <p>Books Reviewed:</p>
+            </div>
+            <div class="col-sm-5">
+                <p>{{ reviews|length }}</p>
+            </div>
+        </div>
+        {% else %}
+        <div class="row">
+            <div class="col">
+                <p>You've not reviewed any books yet.</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h3>Posted Reviews On The Following Books:</h3>
+        <ul class="list-unstyled p-2">
+            {% for review in reviews %}
+            <li class="mt-1 mb-1 p-1"><a href="{% url 'view_book' review.book.id %}">{{ review.book.title }}</a></li>
+            {% empty %}
+            <li class="mt-1 mb-1 p-1">Such empty. Write a review, will ya!?</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock content %}

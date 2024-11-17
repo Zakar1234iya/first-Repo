@@ -1,0 +1,55 @@
+{% extends 'html/base.html' %}
+
+{% block content %}
+
+{% if request.session.loggedin == True %}
+<nav class="row align-items-center justify-content-between border-bottom p-1 mb-5">
+    <div class="col-sm-4 align-self-center">
+        <h2><strong>Welcome, {{ current_user.alias }}</strong></h2>
+    </div>
+    <div class="col-sm-4 align-self-center">
+        <a href="{% url 'add_book_review' %}">Add Book & Review</a> | <a href="{% url 'logout' %}">Logout</a>
+    </div>
+</nav>
+{% else %}
+<nav class="row align-items-center justify-content-between border-bottom p-1 mb-5">
+    <div class="col-sm-8 align-self-center">
+        <h2><strong>Welcome! Log in to add books or reviews!</strong></h2>
+    </div>
+    <div class="col-sm-2 align-self-center">
+        <a href="{% url 'home' %}">Log In</a>
+    </div>
+</nav>
+{% endif %}
+<div class="row">
+    <div class="col-lg-6">
+        <h2 class="mt-2">Recent Book Reviews:</h2>
+        {% for review_obj in reviews|slice:":3" %}
+        <hr class="reviews">
+        <h3 class="ml-3"><a href="{% url 'view_book' review_obj.book.id %}">{{ review_obj.book.title }}</a></h3>
+        {% if review_obj.rating == 1 %}
+        <p class="ml-5">Rating: <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star text-warning"></i><i class="bi bi-star text-warning"></i><i class="bi bi-star text-warning"></i><i class="bi bi-star text-warning"></i></p>
+        {% elif review_obj.rating == 2 %}
+        <p class="ml-5">Rating: <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star text-warning"></i><i class="bi bi-star text-warning"></i><i class="bi bi-star text-warning"></i></p>
+        {% elif review_obj.rating == 3 %}
+        <p class="ml-5">Rating: <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star text-warning"></i><i class="bi bi-star text-warning"></i></p>
+        {% elif review_obj.rating == 4 %}
+        <p class="ml-5">Rating: <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star text-warning"></i></p>
+        {% elif review_obj.rating == 5 %}
+        <p class="ml-5">Rating: <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i>
+        {% endif %}
+        <p class="ml-5"><a href="{% url 'user_profile' review_obj.user.id %}">{{ review_obj.user.alias }}</a> says: {{ review_obj.review }}</p>
+        <p class="ml-5 mb-2">Posted on {{ review_obj.created_at|date:"M j, Y"}}</p>
+        {% endfor %}
+    </div>
+    <div class="col-lg-6">
+        <h2 class="border_bottom">Other Books With Reviews:</h2>
+        <ul class="list-unstyled p-2">
+            {% for book_obj in books %}
+            <li class="ml-4 mb-2"><a href="{% url 'view_book' book_obj.id %}">{{ book_obj.title}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock content %}
