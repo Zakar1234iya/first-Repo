@@ -62,16 +62,22 @@
             </div>
             <div class="form-group row">
                 <label for="bookrating" class="col-md-2 col-form-label">Rating:</label>
-                <div class="col-6">
-                    <select class="custom-select" name="bookrating" id="bookrating">
-                        <option selected>Pick A Rating!</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
-                        <option value="5">Five</option>
-                    </select>
-                </div>
+                <div class="form-group row">
+                    <label for="bookrating" class="col-md-2 col-form-label">Rating:</label>
+                    <div class="col-6">
+                        <select class="custom-select" name="bookrating" id="bookrating" required>
+                            <option value="" disabled selected>Pick A Rating!</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    </div>
+                    <div class="col text-right">
+                        <button type="submit" class="btn btn-success">Add Review!</button>
+                    </div>
+                </div>                
                 <div class="col text-right">
                     <button type="submit" class="btn btn-success">Add Review!</button>
                 </div>

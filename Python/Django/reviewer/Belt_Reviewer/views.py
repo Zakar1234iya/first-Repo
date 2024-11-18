@@ -163,6 +163,7 @@ def review_existing_book(request, bookid):
         messages.error(request, 'Invalid request. Returning you to the main page.', extra_tags='danger')
         return redirect('book_reviews')
 
+
 # Handle the process of adding a new book and its review
 def process_new_book_review(request):
     if request.method == 'POST':
@@ -213,3 +214,6 @@ def delete_review(request, reviewid):
     # Add a success message.
     messages.success(request, 'Welp, that review has successfully sent to the ether. Ja ni.')
     return redirect('book_reviews')
+
+
+

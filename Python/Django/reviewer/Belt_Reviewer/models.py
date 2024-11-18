@@ -96,8 +96,12 @@ class ReviewsManager(models.Manager):
         errors = {}
         if len(postData['bookreview']) < 10:
             errors['bookreview'] = 'Reviews must be at least 10 characters long.'
-        if int(postData['bookrating']) < 1 or int(postData['bookrating']) > 5:
-            errors['bookrating'] = 'Rating is required and it must be between 1 and 5 stars.'
+        try:
+            rating = int(postData['bookrating'])
+            if rating < 1 or rating > 5:
+                errors['bookrating'] = 'Rating is required and it must be between 1 and 5 stars.'
+        except (ValueError, TypeError):
+            errors['bookrating'] = 'A valid rating is required.'
         return errors
 
     # Create a new review
@@ -105,6 +109,7 @@ class ReviewsManager(models.Manager):
         user = Users.objects.get(id=user_id)
         book = Books.objects.get(id=book_id)
         return self.create(review=review, rating=rating, user=user, book=book)
+
 
 # Review model representing a review in the application
 class Reviews(models.Model):
@@ -115,3 +120,6 @@ class Reviews(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = ReviewsManager()  # Attach the ReviewsManager to add additional methods
+
+
+
