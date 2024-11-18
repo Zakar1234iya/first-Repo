@@ -52,3 +52,4 @@ def profile(request):
         messages.error(request, 'You must first login.', extra_tags='login')
         return redirect('/')
     return render(request, 'profile.html')
+
